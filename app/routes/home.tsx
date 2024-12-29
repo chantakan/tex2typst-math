@@ -3,8 +3,8 @@ import LatexConverter from '~/components/LatexConverter';
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Latex to Typst equation converter" },
+    { name: "description", content: "Welcome to Latex to Typst equation converter!!" },
   ];
 }
 

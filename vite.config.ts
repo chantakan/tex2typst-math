@@ -18,8 +18,19 @@ export default defineConfig({
     wasm(),
     topLevelAwait()
   ],
+  worker: {
+    plugins: () => [wasm()],
+    format: 'es',  // Workerのビルド形式をESモジュールに設定
+  },
+  build: {
+    target: 'esnext',
+    modulePreload: {
+      polyfill: true
+    }
+  },
   optimizeDeps: {
     include: ['@myriaddreamin/typst.ts'],
+    exclude: ['@myriaddreamin/typst.ts/dist/wasm']
   },
   server: {
     host: true,
