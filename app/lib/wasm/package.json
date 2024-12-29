@@ -1,0 +1,29 @@
+{
+  "name": "mitex-wasm",
+  "type": "module",
+  "collaborators": [
+    "Myriad-Dreamin <camiyoru@gmail.com>",
+    "OrangeX4 <orangex4@qq.com>",
+    "mgt <mgt@oi-wiki.org>"
+  ],
+  "description": "Wasm module which uses mitex, running in browsers and Typst",
+  "version": "0.2.5",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitex-rs/mitex"
+  },
+  "files": [
+    "mitex_wasm_bg.wasm",
+    "mitex_wasm.js",
+    "mitex_wasm_bg.js",
+    "mitex_wasm.d.ts"
+  ],
+  "main": "mitex_wasm.js",
+  "homepage": "https://github.com/mitex-rs/mitex",
+  "types": "mitex_wasm.d.ts",
+  "sideEffects": [
+    "./mitex_wasm.js",
+    "./snippets/*"
+  ]
+}
