@@ -3,6 +3,7 @@ import autoprefixer from "autoprefixer";
 import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import wasm from 'vite-plugin-wasm';
+import topLevelAwait from 'vite-plugin-top-level-await';
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
@@ -11,7 +12,15 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
-  plugins: [reactRouter(), tsconfigPaths(), wasm()],
+  plugins: [
+    reactRouter(),
+    tsconfigPaths(),
+    wasm(),
+    topLevelAwait()
+  ],
+  optimizeDeps: {
+    include: ['@myriaddreamin/typst.ts'],
+  },
   server: {
     host: true,
     port: 5137,
@@ -19,5 +28,5 @@ export default defineConfig({
     watch: {
       usePolling: true,
     }
-  }
+  },
 });
